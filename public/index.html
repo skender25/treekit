@@ -1,43 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200;400&display=swap" rel="stylesheet">
+  <title>Teknion -sdasdr</title>
+  <style>
+    #photo {
+        border: 4px solid green;
+        padding: 4px;
+    }
+</style>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  
+  .toolbar {
+    background-color:white;
+  }
+  .toolbar-button {
+    background-color:beige;
+    fill: pink;
+  }
+  .toolbar-button:hover {
+    background-color: burlywood;
+    fill: beige;
+  }
+  .toolbar-active-button {
+    background-color: antiquewhite;
+  }
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+  .toolbox {
+    background-color:white;
+  }
+  .toolbox-button {
+    background-color:beige;
+    fill: pink;
+  }
+  .toolbox-button:hover {
+    background-color: burlywood;
+    fill: beige;
+  }
+  .toolbox-active-button {
+    background-color: antiquewhite;
+    fill: beige;
+  }
+  .toolbox-panel-row {
+    background-color: rgba(255, 200, 255, 0.8);
+  }
+  .notes-area {
+    color: red;
+    background-color: rgba(255, 200, 255, 0.8);
+    font-family: 'Comic Sans MS', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: x-large;
+  }
+</style>
+</head>
+
+<body>
+  
+ 
+   
+    
+
+   
+  
+
+    <!-- <component-image></component-image> -->
+ 
+<script  src="index.js"></script>
+  <!-- <script src="https://admin.threekit.com/app/js/threekit-player.js"></script> -->
+  <script src="https://preview.threekit.com/app/js/threekit-player.js"></script>
+  <script src=
+  "https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js">
+      </script>
+      <script type="text/javascript">
+  
+        // Define the function 
+        // to screenshot the div
+        function takeshot() {
+            let div =
+                document.getElementById('foto');
+  
+            // Use the html2canvas
+            // function to take a screenshot
+            // and append it
+            // to the output div
+            html2canvas(div).then(
+                function (canvas) {
+                    document
+                    .getElementById('output')
+                    .appendChild(canvas );
+                })
+        }
+
+        let experiments;
+      document.addEventListener("DOMContentLoaded", function () {
+        experiments = new markerjs2.Experiments();
+      });    
+    </script>
+
+       
+       <button onclick="takeshot()">
+        Take Screenshot
+    </button>
+  <div id="root">
+ 
+  </div>
+ 
+  
+<h1>Screenshot:</h1>
+
+
+<div id="app" >
+  <div id="output" onclick="experiments.openMarkerArea(document.getElementById('output'))"></div>
+  
+  <!-- <canvas 
+    id="targetElement1"
+    style="max-width: 50%; height: 400px; border: 1px solid green; position: absolute; top: 18px; left: 40%;"
+    onclick="experiments.openMarkerArea(document.getElementById('targetElement1'))"></canvas> -->
+  <!-- <div 
+    id="targetElement1"
+    style="width: 50%; height: 400px; border: 1px solid magenta; position: absolute; top: 18px; left: 40%;"
+    onclick="experiments.openMarkerArea(document.getElementById('targetElement1'))"></div> -->
+  <br />
+ 
+  <br />
+
+
+  <!-- <component-image></component-image> -->
+</div>
+<script  src="index.js"></script>
+<footer>
+  <p>Source 360<br>
+  <a href="mailto:hege@example.com">Source 360</a></p>
+</footer>
+
+</body>
+
 </html>
